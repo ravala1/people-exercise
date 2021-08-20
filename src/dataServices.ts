@@ -28,7 +28,6 @@ export const createPerson = async (person: Person) => {
   if (person.id === undefined || person.id === null) {
     return Promise.reject("id is required");
   }
-
   const p = people.find((p) => p.id === person.id);
   if (!!p) return Promise.reject("user with that id already exists");
   people.push(person);
